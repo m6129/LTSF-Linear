@@ -12,7 +12,7 @@ fi
 # for model_name in Naive GBRT ARIMA SARIMA
 for model_name in Naive
   do
-  for pred_len in 96 192 336 720
+  for pred_len in 24 96 192 336 720
     do
       python -u run_stat.py \
         --is_training 1 \
@@ -21,7 +21,7 @@ for model_name in Naive
         --model_id ETTh1_96'_'$pred_len \
         --model $model_name \
         --data ETTh1 \
-        --features M \
+        --features S \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -34,7 +34,7 @@ for model_name in Naive
         --model_id ETTh2_96'_'$pred_len \
         --model $model_name \
         --data ETTh2 \
-        --features M \
+        --features S \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -47,7 +47,7 @@ for model_name in Naive
         --model_id ETTm1_96'_'$pred_len \
         --model $model_name \
         --data ETTm1 \
-        --features M \
+        --features S \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -60,7 +60,7 @@ for model_name in Naive
         --model_id ETTm2_96'_'$pred_len \
         --model $model_name \
         --data ETTm2 \
-        --features M \
+        --features S \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -73,7 +73,7 @@ for model_name in Naive
       --model_id exchange_rate_96'_'$pred_len \
       --model $model_name \
       --data custom \
-      --features M \
+      --features S \
       --seq_len 96 \
       --pred_len $pred_len \
       --des 'Exp' \
@@ -86,37 +86,13 @@ for model_name in Naive
       --model_id weather_96'_'$pred_len \
       --model $model_name \
       --data custom \
-      --features M \
+      --features S \
       --seq_len 96 \
       --pred_len $pred_len \
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_weather_'$pred_len.log
 
-    python -u run_stat.py \
-      --is_training 1 \
-      --root_path ./dataset/ \
-      --data_path electricity.csv \
-      --model_id electricity_96'_'$pred_len \
-      --model $model_name \
-      --data custom \
-      --features M \
-      --seq_len 96 \
-      --pred_len $pred_len \
-      --des 'Exp' \
-      --itr 1 >logs/LongForecasting/$model_name'_electricity_'$pred_len.log
-
-    python -u run_stat.py \
-      --is_training 1 \
-      --root_path ./dataset/ \
-      --data_path traffic.csv \
-      --model_id traffic_96'_'$pred_len \
-      --model $model_name \
-      --data custom \
-      --features M \
-      --seq_len 96 \
-      --pred_len $pred_len \
-      --des 'Exp' \
-      --itr 1 >logs/LongForecasting/$model_name'_traffic_'$pred_len.log
+  
   done
 done
 
