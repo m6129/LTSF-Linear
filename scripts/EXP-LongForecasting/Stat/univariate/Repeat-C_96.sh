@@ -109,7 +109,7 @@ for model_name in Naive
           --model_id ili_36'_'$pred_len \
           --model $model_name \
           --data custom \
-          --features M \
+          --features S \
           --seq_len 36 \
           --label_len 18 \
           --pred_len $pred_len \
