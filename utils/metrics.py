@@ -41,4 +41,4 @@ def metric(pred, true):
     rse = RSE(pred, true)
     corr = CORR(pred, true)
 
-    return mae, mse, rmse, mape, mspe, rse, corr
+    return mae, mse, rmse, mape, mspe, rse#, corr
