@@ -99,6 +99,7 @@ done
 
 # for model_name in Naive GBRT ARIMA SARIMA
 for model_name in Naive
+  do
   for pred_len in 24 36 48 60
     do
       python -u run_stat.py \

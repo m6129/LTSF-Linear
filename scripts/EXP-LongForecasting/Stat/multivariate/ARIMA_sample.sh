@@ -21,10 +21,10 @@ for model_name in ARIMA
         --model_id ETTh1_96'_'$pred_len \
         --model $model_name \
         --data ETTh1 \
-        --features S \
+        --features M \
         --seq_len 96 \
         --pred_len $pred_len \
-        #--sample 0.01
+        --sample 0.01
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTh1_'$pred_len.log
 
@@ -100,6 +100,7 @@ done
 
 # for model_name in Naive GBRT ARIMA SARIMA
 for model_name in ARIMA
+  do
   for pred_len in 24 36 48 60
     do
       python -u run_stat.py \

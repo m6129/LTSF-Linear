@@ -10,7 +10,7 @@ if [ ! -d "./logs/LongForecasting" ]; then
 fi
 
 # for model_name in Naive GBRT ARIMA SARIMA
-for model_name in ARIMA
+for model_name in Naive
   do
   for pred_len in 24 96 192 336 720
     do
@@ -24,7 +24,6 @@ for model_name in ARIMA
         --features M \
         --seq_len 96 \
         --pred_len $pred_len \
-        --sample 0.01
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTh1_'$pred_len.log
 
@@ -35,7 +34,7 @@ for model_name in ARIMA
         --model_id ETTh2_96'_'$pred_len \
         --model $model_name \
         --data ETTh2 \
-        --features S \
+        --features M \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -48,7 +47,7 @@ for model_name in ARIMA
         --model_id ETTm1_96'_'$pred_len \
         --model $model_name \
         --data ETTm1 \
-        --features S \
+        --features M \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -61,7 +60,7 @@ for model_name in ARIMA
         --model_id ETTm2_96'_'$pred_len \
         --model $model_name \
         --data ETTm2 \
-        --features S \
+        --features M \
         --seq_len 96 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -74,7 +73,7 @@ for model_name in ARIMA
       --model_id exchange_rate_96'_'$pred_len \
       --model $model_name \
       --data custom \
-      --features S \
+      --features M \
       --seq_len 96 \
       --pred_len $pred_len \
       --des 'Exp' \
@@ -87,7 +86,7 @@ for model_name in ARIMA
       --model_id weather_96'_'$pred_len \
       --model $model_name \
       --data custom \
-      --features S \
+      --features M \
       --seq_len 96 \
       --pred_len $pred_len \
       --des 'Exp' \
@@ -99,7 +98,8 @@ done
 
 
 # for model_name in Naive GBRT ARIMA SARIMA
-for model_name in ARIMA
+for model_name in Naive
+  do
   for pred_len in 24 36 48 60
     do
       python -u run_stat.py \

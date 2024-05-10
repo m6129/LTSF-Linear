@@ -21,7 +21,7 @@ for model_name in SARIMA
         --model_id ETTh1_96'_'$pred_len \
         --model $model_name \
         --data ETTh1 \
-        --features M \
+        --features S \
         --seq_len 96 \
         --pred_len $pred_len \
         --sample 0.01
@@ -100,6 +100,7 @@ done
 
 # for model_name in Naive GBRT ARIMA SARIMA
 for model_name in SARIMA
+  do
   for pred_len in 24 36 48 60
     do
       python -u run_stat.py \
