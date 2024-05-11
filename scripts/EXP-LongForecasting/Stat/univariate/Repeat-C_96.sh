@@ -92,14 +92,13 @@ for model_name in Naive
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_weather_'$pred_len.log
 
-      # при одномерном прогнозировании лучше custom
     python -u run_stat.py \
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path de_big.csv \
       --model_id de_big_96'_'$pred_len \
       --model $model_name \
-      --data custom \
+      --data ETTh1 \
       --features S \
       --seq_len 96 \
       --pred_len $pred_len \
