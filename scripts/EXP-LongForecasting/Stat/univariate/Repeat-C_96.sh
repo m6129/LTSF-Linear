@@ -98,6 +98,20 @@ for model_name in Naive
       --data_path de_big.csv \
       --model_id de_big_96'_'$pred_len \
       --model $model_name \
+      --data ETTh1 \
+      --features S \
+      --seq_len 96 \
+      --pred_len $pred_len \
+      --des 'Exp' \
+      --itr 1 >logs/LongForecasting/$model_name'_de_big_'$pred_len.log
+
+      
+    python -u run_stat.py \
+      --is_training 1 \
+      --root_path ./dataset/ \
+      --data_path de_big.csv \
+      --model_id de_big_96'_'$pred_len \
+      --model $model_name \
       --data custom \
       --features S \
       --seq_len 96 \
