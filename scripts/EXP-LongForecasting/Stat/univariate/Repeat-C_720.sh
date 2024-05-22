@@ -18,11 +18,11 @@ for model_name in Naive
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTh1.csv \
-        --model_id ETTh1_336'_'$pred_len \
+        --model_id ETTh1_720'_'$pred_len \
         --model $model_name \
         --data ETTh1 \
         --features S \
-        --seq_len 336 \
+        --seq_len 720 \
         --pred_len $pred_len \
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTh1_'$pred_len.log
@@ -31,11 +31,11 @@ for model_name in Naive
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTh2.csv \
-        --model_id ETTh2_336'_'$pred_len \
+        --model_id ETTh2_720'_'$pred_len \
         --model $model_name \
         --data ETTh2 \
         --features S \
-        --seq_len 336 \
+        --seq_len 720 \
         --pred_len $pred_len \
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTh2_'$pred_len.log
@@ -44,11 +44,11 @@ for model_name in Naive
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTm1.csv \
-        --model_id ETTm1_336'_'$pred_len \
+        --model_id ETTm1_720'_'$pred_len \
         --model $model_name \
         --data ETTm1 \
         --features S \
-        --seq_len 336 \
+        --seq_len 720 \
         --pred_len $pred_len \
         --des 'Exp' \
         --itr 1 >logs/LongForecasting/$model_name'_ETTm1_'$pred_len.log
@@ -57,11 +57,11 @@ for model_name in Naive
         --is_training 1 \
         --root_path ./dataset/ \
         --data_path ETTm2.csv \
-        --model_id ETTm2_336'_'$pred_len \
+        --model_id ETTm2_720'_'$pred_len \
         --model $model_name \
         --data ETTm2 \
         --features S \
-        --seq_len 336 \
+        --seq_len 720 \
         --pred_len $pred_len \
         --des 'Exp' \
         --itr 1 --batch_size 300 >logs/LongForecasting/$model_name'_ETTm2_'$pred_len.log
@@ -70,11 +70,11 @@ for model_name in Naive
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path exchange_rate.csv \
-      --model_id exchange_rate_336'_'$pred_len \
+      --model_id exchange_rate_720'_'$pred_len \
       --model $model_name \
       --data custom \
       --features S \
-      --seq_len 336 \
+      --seq_len 720 \
       --pred_len $pred_len \
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_exchange_rate_'$pred_len.log
@@ -83,11 +83,11 @@ for model_name in Naive
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path weather.csv \
-      --model_id weather_336'_'$pred_len \
+      --model_id weather_720'_'$pred_len \
       --model $model_name \
       --data custom \
       --features S \
-      --seq_len 336 \
+      --seq_len 720 \
       --pred_len $pred_len \
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_weather_'$pred_len.log
@@ -96,11 +96,11 @@ for model_name in Naive
       --is_training 1 \
       --root_path ./dataset/ \
       --data_path de_big.csv \
-      --model_id de_big_336'_'$pred_len \
+      --model_id de_big_720'_'$pred_len \
       --model $model_name \
       --data ETTh1 \
       --features S \
-      --seq_len 336 \
+      --seq_len 720 \
       --pred_len $pred_len \
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_de_big_'$pred_len.log

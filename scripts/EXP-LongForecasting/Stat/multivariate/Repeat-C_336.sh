@@ -21,7 +21,7 @@ for model_name in Naive
         --model_id ETTh1_336'_'$pred_len \
         --model $model_name \
         --data ETTh1 \
-        --features S \
+        --features M \
         --seq_len 336 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -34,7 +34,7 @@ for model_name in Naive
         --model_id ETTh2_336'_'$pred_len \
         --model $model_name \
         --data ETTh2 \
-        --features S \
+        --features M \
         --seq_len 336 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -47,7 +47,7 @@ for model_name in Naive
         --model_id ETTm1_336'_'$pred_len \
         --model $model_name \
         --data ETTm1 \
-        --features S \
+        --features M \
         --seq_len 336 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -60,7 +60,7 @@ for model_name in Naive
         --model_id ETTm2_336'_'$pred_len \
         --model $model_name \
         --data ETTm2 \
-        --features S \
+        --features M \
         --seq_len 336 \
         --pred_len $pred_len \
         --des 'Exp' \
@@ -73,7 +73,7 @@ for model_name in Naive
       --model_id exchange_rate_336'_'$pred_len \
       --model $model_name \
       --data custom \
-      --features S \
+      --features M \
       --seq_len 336 \
       --pred_len $pred_len \
       --des 'Exp' \
@@ -86,12 +86,12 @@ for model_name in Naive
       --model_id weather_336'_'$pred_len \
       --model $model_name \
       --data custom \
-      --features S \
+      --features M \
       --seq_len 336 \
       --pred_len $pred_len \
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_weather_'$pred_len.log
-
+    # для многомерного прогнозирвоания лучше ETTh1
     python -u run_stat.py \
       --is_training 1 \
       --root_path ./dataset/ \
@@ -99,11 +99,12 @@ for model_name in Naive
       --model_id de_big_336'_'$pred_len \
       --model $model_name \
       --data ETTh1 \
-      --features S \
+      --features M \
       --seq_len 336 \
       --pred_len $pred_len \
       --des 'Exp' \
       --itr 1 >logs/LongForecasting/$model_name'_de_big_'$pred_len.log
+
 
   
   done
@@ -122,7 +123,7 @@ for model_name in Naive
           --model_id ili_60'_'$pred_len \
           --model $model_name \
           --data custom \
-          --features S \
+          --features M \
           --seq_len 60 \
           --label_len 18 \
           --pred_len $pred_len \
@@ -136,7 +137,7 @@ for model_name in Naive
           --model_id de_small_60'_'$pred_len \
           --model $model_name \
           --data custom \
-          --features S \
+          --features M \
           --seq_len 60 \
           --label_len 18 \
           --pred_len $pred_len \
